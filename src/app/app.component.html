@@ -1,24 +1,29 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
-      <!-- using href= will force a refresh of the page,
-        keep code for reference -->
+      <!-- using href= will force a refresh of the page, keep code for reference -->
       <!-- <ul class="nav nav-tabs">
         <li role="presentation" class="active"><a href="/">Home</a></li>
         <li role="presentation"><a href="/servers">Servers</a></li>
         <li role="presentation"><a href="/users">Users</a></li>
       </ul> -->
-      <!-- using routerLink renders the page without refresh,
-        leading / makes this links absolute link -->
+
+      <!-- using routerLink renders the page without refresh, leading / makes this links absolute link -->
+      <!-- user routerLinkActive="something" to set the click of the link to dynamic show the tab is active,
+        note; the Home link will still be active since every link has a /-->
       <ul class="nav nav-tabs">
-          <li role="presentation" class="active"><a routerLink="/">Home</a></li>
-          <li role="presentation"><a routerLink="/servers">Servers</a></li>
-          <!-- can use property binding for more fine
-            grain control of links,
-          note we can use either leading / for absolute
-          path or no / for relative path since we
-          are at the root path right after the server name -->
-          <li role="presentation"><a [routerLink]="['/users']">Users</a></li>
+          <!-- routerLinkActiveOption with exact true makes NG check that active is only set iff exact path is active -->
+          <!-- routerLinkActiveOptions is using property binding since we are using Javascript Objects --> 
+          <li role="presentation" 
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{exact: true}">
+            <a routerLink="/">Home</a>
+          </li>
+          <li role="presentation" routerLinkActive="active"><a routerLink="/servers">Servers</a></li>
+          <!-- can use property binding for more fine grain control of links,
+          note: use either prefix / for absolute path or no / for relative path.
+          Since we are at the root path right after the server name -->
+          <li role="presentation" routerLinkActive="active"><a [routerLink]="['/users']">Users</a></li>
         </ul>
     </div>
   </div>
