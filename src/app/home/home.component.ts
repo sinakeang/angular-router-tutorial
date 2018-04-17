@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  // inject Router if we need to use it
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
+  onLoadServers() {
+    //assume we are doing complex calculation
+    //navigate allows us to use routerLink programatically
+    //using absolute servers path with prefix /
+    this.router.navigate(['/servers']);
+  }
 }
