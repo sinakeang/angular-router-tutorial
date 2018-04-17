@@ -19,6 +19,9 @@ const appRoutes: Routes =[
   // make sure there is no prefix / for path value
   { path: '', component: HomeComponent },
   { path: 'users', component: UsersComponent },
+  // passing parameter id to path
+  // colons tell NG that id and name are dynamic variables on the path
+  { path: 'users/:id/:name', component: UserComponent },
   { path: 'servers', component: ServersComponent },
 ];
 
