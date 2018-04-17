@@ -10,13 +10,18 @@
     </div>
   </div>
   <div class="col-xs-12 col-sm-4">
+
+    <!-- Version One -->
     <!-- routerLink="servers" will give us an error,
       routerLink will look for servers/servers,
       which is incorrect, without / we use a relative path -->
     <!-- <a routerLink="servers">Reload Page</a> -->
     <!-- add prefix / to turn link to absolute path -->
     <!-- we can use ../servers like folder structure -->
-    <a routerLink="/servers">Reload Page</a>
+    <!-- <a routerLink="/servers">Reload Page</a> -->
+    <!-- Version One -->
+
+    <button class="btn btn-primary" (click)="onReload()">Reload Page</button>
     <app-edit-server></app-edit-server>
     <hr>
     <app-server></app-server>
